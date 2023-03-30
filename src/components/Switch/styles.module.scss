@@ -1,0 +1,22 @@
+.switch {
+  background-color: #f4f4f5;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+
+  &:focus {
+    transition: all 0.2s ease-in-out;
+    border-radius: 100%;
+    outline: transparent;
+    outline-style: solid;
+    box-shadow: gray 0 0 0 3px;
+  }
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}

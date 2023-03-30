@@ -1,0 +1,16 @@
+.theme[color-mode="dark"] {
+  color-scheme: dark;
+
+  --background: #0f111a;
+  --font-1: #ffffff;
+
+  --color1: #3b3c4a;
+  --color2: #f4f4f5;
+}
+.theme[color-mode="light"] {
+  color-scheme: light;
+
+  --background: #ffffff;
+  --font-1: #3b3c4a;
+  --color1: #f4f4f5;
+}

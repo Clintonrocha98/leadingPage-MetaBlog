@@ -1,0 +1,84 @@
+@import "../../styles/global";
+
+.containerHeader {
+  background-color: var(--background);
+  .warrapHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    max-width: 1440px;
+    margin: 0 auto;
+    @media (max-width: 1024px) {
+      padding: 0 10px;
+    }
+    > svg {
+      background-color: var(--color2);
+      padding: 1px;
+      border-radius: 10px;
+    }
+    nav {
+      display: flex;
+
+      ul {
+        display: flex;
+        gap: 40px;
+        font-family: "Work Sans";
+
+        li {
+          font-weight: 400;
+          font-size: 1rem;
+          line-height: 24px;
+          list-style: none;
+          color: var(--font-1);
+          cursor: pointer;
+          background: linear-gradient(
+              to right,
+              rgba(100, 200, 200, 1),
+              rgba(100, 200, 200, 1)
+            ),
+            linear-gradient(
+              to right,
+              rgba(255, 0, 0, 1),
+              rgba(255, 0, 180, 1),
+              rgba(0, 100, 200, 1)
+            );
+          background-size: 100% 2px, 0 3px;
+          background-position: 100% 100%, 0 100%;
+          background-repeat: no-repeat;
+          transition: background-size 400ms;
+          &:hover {
+            background-size: 0 2px, 100% 3px;
+          }
+        }
+      }
+    }
+    .warrapRight {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .warrapInput {
+      display: flex;
+      align-items: center;
+      background-color: var(--color1);
+      padding: 8px 16px 8px 16px;
+      border-radius: 5px;
+      gap: 16px;
+      svg {
+        color: var(--color2);
+        cursor: pointer;
+      }
+
+      input {
+        background-color: transparent;
+        width: 115px;
+        height: 20px;
+        border: none;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
