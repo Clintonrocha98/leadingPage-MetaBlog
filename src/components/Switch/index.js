@@ -3,28 +3,33 @@ import { MoonIcon, SunIcon } from "../SVG";
 import styles from "./styles.module.scss";
 
 export const Switch = () => {
-  const [isActive, setIsActive] = useState(true);
-  const [theme, setTheme] = useState("light");
+  const [theme, setIsActive] = useState("light");
 
   useEffect(() => {
-    const localTheme = localStorage.getItem("theme");
-    localStorage.setItem("theme", localTheme);
-    if (localTheme) {
-      setTheme(localTheme);
-    }
+    const storedTheme = localStorage.getItem("theme");
+    const newTheme = storedTheme ? storedTheme : "light";
+    
+    localStorage.setItem("theme", newTheme);
+
+    setIsActive(newTheme);
+
+    document.documentElement.setAttribute("color-mode", newTheme);
   }, []);
 
   function hundleTheme() {
-    setIsActive(!isActive);
-    const newTheme = isActive ? "dark" : "light";
-    setTheme(newTheme);
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setIsActive(newTheme);
     localStorage.setItem("theme", newTheme);
     document.documentElement.setAttribute("color-mode", newTheme);
   }
 
   return (
-    <button onClick={hundleTheme} className={styles.switch}>
-      {isActive ? <SunIcon /> : <MoonIcon />}
+    <button
+      onClick={hundleTheme}
+      className={styles.switch}
+      aria-label="Change color scheme"
+    >
+      {theme === "light" ? <SunIcon /> : <MoonIcon />}
     </button>
   );
 };
